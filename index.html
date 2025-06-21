@@ -92,6 +92,9 @@
       color: #bfa046;
       text-decoration: none;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -101,13 +104,66 @@
   </header>
 
   <div class="language-toggle">
-    <a href="#">English</a> | <a href="#">Deutsch</a>
+    <button onclick="toggleLanguage('en')">English</button> |
+    <button onclick="toggleLanguage('de')">Deutsch</button>
   </div>
 
   <div class="container">
     <section class="book-grid">
-      <!-- All 9 books go here: use your previously structured book blocks -->
-      <!-- Use <img src="*.jpg"> and include title, price, and summary -->
+      <div class="book">
+        <img src="noah.jpg" alt="Noah's Ark">
+        <div class="book-title">Noah's Ark</div>
+        <div class="book-description en">God saved Noah and the animals from the great flood using a giant ark.</div>
+        <div class="book-description de hidden">Gott rettete Noah und die Tiere vor der großen Flut mit einer Arche.</div>
+      </div>
+      <div class="book">
+        <img src="moses.jpg" alt="Moses">
+        <div class="book-title">Moses</div>
+        <div class="book-description en">Moses led the Israelites out of Egypt after God spoke to him from a burning bush.</div>
+        <div class="book-description de hidden">Moses führte die Israeliten aus Ägypten, nachdem Gott durch einen brennenden Busch zu ihm sprach.</div>
+      </div>
+      <div class="book">
+        <img src="daniel.jpg" alt="Daniel">
+        <div class="book-title">Daniel and the Lions</div>
+        <div class="book-description en">Daniel was saved by an angel when he was thrown into a lions’ den.</div>
+        <div class="book-description de hidden">Daniel wurde von einem Engel gerettet, als er in die Löwengrube geworfen wurde.</div>
+      </div>
+      <div class="book">
+        <img src="david.jpg" alt="David">
+        <div class="book-title">David and Goliath</div>
+        <div class="book-description en">Young David defeated the giant Goliath with a sling and a stone.</div>
+        <div class="book-description de hidden">Der junge David besiegte den Riesen Goliath mit einer Schleuder und einem Stein.</div>
+      </div>
+      <div class="book">
+        <img src="jonah.jpg" alt="Jonah">
+        <div class="book-title">Jonah</div>
+        <div class="book-description en">Jonah was swallowed by a big fish and later obeyed God’s command.</div>
+        <div class="book-description de hidden">Jona wurde von einem großen Fisch verschluckt und gehorchte später Gottes Befehl.</div>
+      </div>
+      <div class="book">
+        <img src="adam.jpg" alt="Adam and Eve">
+        <div class="book-title">Adam and Eve</div>
+        <div class="book-description en">Adam and Eve disobeyed God and had to leave the Garden of Eden.</div>
+        <div class="book-description de hidden">Adam und Eva waren Gott ungehorsam und mussten den Garten Eden verlassen.</div>
+      </div>
+      <div class="book">
+        <img src="hannah.jpg" alt="Hannah">
+        <div class="book-title">Hannah</div>
+        <div class="book-description en">Hannah prayed for a child and gave her son Samuel to serve God.</div>
+        <div class="book-description de hidden">Hannah betete für ein Kind und gab ihren Sohn Samuel, um Gott zu dienen.</div>
+      </div>
+      <div class="book">
+        <img src="esther.jpg" alt="Esther">
+        <div class="book-title">Queen Esther</div>
+        <div class="book-description en">Esther became queen and bravely saved her people.</div>
+        <div class="book-description de hidden">Esther wurde Königin und rettete mutig ihr Volk.</div>
+      </div>
+      <div class="book">
+        <img src="shadrach.jpg" alt="Shadrach">
+        <div class="book-title">Fiery Furnace</div>
+        <div class="book-description en">God saved three faithful boys from a blazing furnace.</div>
+        <div class="book-description de hidden">Gott rettete drei treue Jungen aus einem brennenden Ofen.</div>
+      </div>
     </section>
 
     <section class="pricing">
@@ -133,6 +189,17 @@
   <footer>
     &copy; 2025 Bible Stories ALM – All Rights Reserved
   </footer>
+
+  <script>
+    function toggleLanguage(lang) {
+      document.querySelectorAll('.book-description.en').forEach(e => {
+        e.classList.toggle('hidden', lang !== 'en');
+      });
+      document.querySelectorAll('.book-description.de').forEach(e => {
+        e.classList.toggle('hidden', lang !== 'de');
+      });
+    }
+  </script>
 </body>
 </html>
 
